@@ -7,7 +7,7 @@ const Home = () => {
 
         <div className="container">
             <h1>Vinhos Velasquez</h1>
-            {/* <img src={} alt="logo"/> */}
+
 
             <h2>Selecione uma das opções abaixo:</h2>
 
