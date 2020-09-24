@@ -1,20 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import api from '../Services/Api';
-import './Clientes.css';
 
 
-function Clientes() {
-  const [clientes, setClientes] = useState([]); 
+function ClientesFieis() {
+  const [clientesFieis, setClientesFieis] = useState([]); 
 
   useEffect(() => {
-    api.get('/clientsOrderedByPurchase').then((response)=> {
-      setClientes(response.data)
+    api.get('/bestClients').then((response)=> {
+      setClientesFieis(response.data)
     })
   }, [])
 
   return ( 
 <div>
-    <h1>Clientes com maior valor em compras:</h1>
+    <h1>Clientes</h1>
+    <span>
+        Clientes com maior valor em compras:
+    </span>
 
     <table>
       <thead>
@@ -25,7 +27,7 @@ function Clientes() {
       </thead>
       <tbody>
 
-        {clientes.map((item) => {
+        {clientesFieis.map((item) => {
           return(
           <tr>
           <td>{item.id}</td> 
@@ -40,4 +42,4 @@ function Clientes() {
   );
 }
 
-export default Clientes;
+export default ClientesFieis;

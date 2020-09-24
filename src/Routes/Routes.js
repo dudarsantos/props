@@ -1,17 +1,17 @@
-import React from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from './pages/Home';
-import Clientes from './pages/Clientes';
 
-function App() {
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import Clientes from "../pages/Clientes";
+import Home from "../pages/Home";
+import RecomendaVinho from "../pages/recomendaVinho";
+
+
+export default function Routes() {
   return (
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/clients" element={<Clientes />} />
-    </Routes>
-    </BrowserRouter>
+    <Switch>
+      <Route path="/" exact component={Home} />
+      <Route path="/RecomendaVinho"  component={RecomendaVinho} />
+      <Route path="/Clientes"  component={Clientes} />
+    </Switch>
   );
 }
-
-export default Routes;
